@@ -5,9 +5,9 @@ html {
 
 :root {
   /*-----Colors */
-  --nav-bg: #242526;
-  --nav-bg-accent: #484a4d;
-  --text-color: #dadce1;
+  --nav-bg: #dadce1;
+  --nav-bg-accent: #927681;
+  --text-color: #242526;
   --my-black: #1e1110;
   --less-black: #495052;
   --primary: #e7a2a3;
@@ -53,15 +53,20 @@ code {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: var(--text-color);
-  transition: filter var(--hover-speed);
+
+  padding: 0.5rem;
+
+  background-color: var(--nav-bg);
+  color: var(--less-black);
+
+  transition: all var(--hover-speed);
 }
 
 /* Hover only triggers for devices whose primary input is a pointer device 
-* Aka not a touch device
+** Aka not a touch device
 */
 @media (hover: hover) and (pointer: fine) {
-  .title:hover {
+  .title > a:hover {
     color: var(--primary);
   }
 

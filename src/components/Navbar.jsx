@@ -26,9 +26,9 @@ function NavbarContainer(props) {
   return (
     // For JSX, it's classname, and not just class
     <nav className='navbar-container'>
-      <a href='#' className='title'>
-        Dum-E
-      </a>
+      <h1 className='title'>
+        <a href='#'>Dum-E</a>
+      </h1>
       <ul className='navbar-nav'> {props.children} </ul>
     </nav>
   );
