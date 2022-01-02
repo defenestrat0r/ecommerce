@@ -1,11 +1,10 @@
 import React from "react";
 import "./Navbar.css";
 import theme from "./Theme";
-import CustomButton from "./CustomButton";
+import AuthButton from "./AuthButton";
 /*-----Material UI imports */
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
@@ -55,13 +54,13 @@ const Navbar = () => {
         </Center>
 
         <Right>
-          <CustomButton variant='text' size='large' color='textBlack'>
+          <AuthButton variant='text' size='large' color='textBlack'>
             Register
-          </CustomButton>
+          </AuthButton>
 
-          <CustomButton variant='text' size='large' color='primary'>
+          <AuthButton variant='text' size='large' color='secondary'>
             Sign In
-          </CustomButton>
+          </AuthButton>
 
           <IconButton aria-label='cart'>
             <Badge badgeContent={4} color='primary'>

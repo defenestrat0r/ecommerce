@@ -77,6 +77,12 @@
     margin: 1rem;
   }
 
+  .language {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+  }
+
   .center {
     display: flex;
     justify-content: center;
@@ -96,81 +102,5 @@
 
     height: 100%;
     max-width: 100%;
-  }
-
-  .nav-item {
-    justify-content: center;
-    align-items: center;
-
-    color: var(--text-color);
-
-    --nav-item-size: calc(var(--nav-size) * 0.8);
-    width: var(--nav-item-size);
-  }
-
-  .icon-button {
-    /* Flexbox to keep everything nice and boxed up */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    --button-size: calc(var(--nav-size) * 0.5);
-
-    padding: 0.3rem;
-    margin: 0.2rem;
-
-    background-color: var(--nav-bg-accent);
-
-    border-radius: 50%;
-
-    transition: filter var(--hover-speed);
-
-    height: var(--button-size);
-    width: var(--button-size);
-  }
-
-  .icon-button svg {
-    fill: var(--text-color);
-
-    height: calc(var(--button-size) * 0.8);
-    width: calc(var(--button-size) * 0.8);
-  }
-
-  .dropdown {
-    position: absolute;
-
-    padding: 1rem;
-
-    background-color: var(--nav-bg);
-
-    border: var(--border);
-    border-radius: var(--border-radius);
-
-    /* This will hide any elements that exceed the container's bounds, which is great */
-    overflow: hidden;
-
-    /* Move it to the left */
-    transform: translateX(-85%);
-
-    /* Navbar height is 60px. 55px makes it just jut out from the navbar */
-    top: 58px;
-    width: 300px;
-  }
-
-  .dropdown-menu-item {
-    display: flex;
-    align-items: center;
-
-    padding: 0.5rem;
-
-    background-color: var(--nav-bg);
-
-    border-radius: var(--border-radius);
-
-    transition: var(--speed);
-  }
-
-  .icon-right {
-    margin-left: auto;
   }
 }

@@ -1,10 +1,10 @@
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
-const CustomButton = styled(Button)({
+const AuthButton = styled(Button)({
   boxShadow: "none",
   textTransform: "none",
-  fontSize: 16,
+  fontSize: 18,
   padding: "6px 12px",
   lineHeight: 1.5,
   fontFamily: [
@@ -22,4 +22,4 @@ const CustomButton = styled(Button)({
   ].join(","),
 });
 
-export default CustomButton;
+export default AuthButton;
