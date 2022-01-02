@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.css";
 import theme from "./Theme";
 import AuthButton from "./AuthButton";
