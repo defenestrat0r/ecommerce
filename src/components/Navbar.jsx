@@ -1,12 +1,18 @@
-import { React, useState } from "react";
-import { ReactComponent as CartIcon } from "../assets/cart.svg";
-import { ReactComponent as DownArrow } from "../assets/chevron-down.svg";
-import { ReactComponent as InfoIcon } from "../assets/info.svg";
-import { ReactComponent as UserIcon } from "../assets/user.svg";
+import React from "react";
 import "./Navbar.css";
+import theme from "./Theme";
+/*-----Material UI imports */
+import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
-import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
 const Navbar = () => {
   return (
@@ -42,15 +48,21 @@ const Navbar = () => {
       </Center>
 
       <Right>
-        <NavItem link='#' icon={<UserIcon />} />
-        <NavItem link='#' icon={<InfoIcon />} />
-        <NavItem link='#' icon={<CartIcon />} />
-        {/*DropDown menu here* */}
-        <NavItem icon={<DownArrow />}>
-          <DropDownMenu>
-            <DropDownItem></DropDownItem>
-          </DropDownMenu>
-        </NavItem>
+        <ThemeProvider theme={theme}>
+          <Button variant='text' size='large' color='primary'>
+            Register
+          </Button>
+
+          <Button variant='text' size='large' color='primary'>
+            Sign In
+          </Button>
+
+          <IconButton aria-label='cart'>
+            <Badge badgeContent={4} color='primary'>
+              <ShoppingCartOutlinedIcon color='action' />
+            </Badge>
+          </IconButton>
+        </ThemeProvider>
       </Right>
     </NavbarContainer>
   );
@@ -89,55 +101,6 @@ function Title(props) {
   return (
     <a href='#' className='title'>
       {props.title}
-    </a>
-  );
-}
-
-function NavItem(props) {
-  /** Using state to manage the dropdown
-   ** The state is 'open'. It's a boolean that tells us whether or not the dropdown is open
-   ** The function 'setOpen' is used to change the state
-   ** We want the dropdown to be closed by default so it's set to false
-   */
-  const [open, setOpen] = useState(false);
-
-  return (
-    <li className='nav-item'>
-      {/** The onclick is a toggle for the dropdown.
-       *** It sets the open value to whatever the opposite it currently is */}
-      <a
-        href={props.link}
-        className='icon-button'
-        onClick={() => setOpen(!!!open)}
-      >
-        {props.icon}
-      </a>
-
-      {/** If the open property is true, we show the children */}
-      {open && props.children}
-    </li>
-  );
-}
-
-function DropDownMenu() {
-  return (
-    <div className='dropdown'>
-      <DropDownItem>Test1</DropDownItem>
-      <DropDownItem leftIcon='x' rightIcon='Y'>
-        Test2
-      </DropDownItem>
-      <DropDownItem leftIcon='?'>Test3</DropDownItem>
-      <DropDownItem rightIcon='>'>Test4</DropDownItem>
-    </div>
-  );
-}
-
-function DropDownItem(props) {
-  return (
-    <a href='#' className='dropdown-menu-item'>
-      <span className='icon-button'>{props.leftIcon}</span>
-      {props.children}
-      <span className='icon-right'>{props.rightIcon}</span>
     </a>
   );
 }
