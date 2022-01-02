@@ -1,0 +1,168 @@
+:root {
+  /*-----Speeds */
+  --speed: 500ms;
+  --hover-speed: 350ms;
+  /*-----Colors */
+  --nav-bg: #dadce1;
+  --nav-bg-accent: #b899a5;
+  --text-color: #242526;
+  --my-black: #1e1110;
+  --less-black: #495052;
+  --primary: #e7a2a3;
+  --primaryDark: #380d0e;
+  /*-----Other stuff */
+  --nav-size: 60px;
+  --border: 1px solid var(--nav-bg-accent);
+  --border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/*-----Classes */
+.navbar-container {
+  display: flex;
+
+  padding: 0 1rem;
+
+  background-color: var(--nav-bg);
+  border-bottom: var(--primaryDark);
+
+  height: var(--nav-size);
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+
+/* Hover only triggers for devices whose primary input is a pointer device 
+** Aka not a touch device
+*/
+@media (hover: hover) and (pointer: fine) {
+  .title:hover {
+    color: var(--primary);
+  }
+
+  .icon-button:hover {
+    filter: brightness(1.2);
+  }
+
+  .dropdown-menu-item:hover {
+    filter: brightness(1.2);
+  }
+}
+
+/*-----Big Screens */
+@media only screen and (min-width: 1140px) {
+  /*-----Classes */
+
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Margin-rigth:auto pushes it to left of the container by filling up the space on right of this flexbox */
+    margin-right: auto;
+
+    padding: 0.5rem;
+
+    background-color: var(--nav-bg);
+    color: var(--less-black);
+
+    transition: all var(--hover-speed);
+  }
+
+  /* Space between items in the left flexbox */
+  .left > a {
+    margin: 1rem;
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* Margin-left:auto pushes it to right of the container by filling up the space on left of this flexbox */
+    margin-left: auto;
+
+    list-style: none;
+
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .nav-item {
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text-color);
+
+    --nav-item-size: calc(var(--nav-size) * 0.8);
+    width: var(--nav-item-size);
+  }
+
+  .icon-button {
+    /* Flexbox to keep everything nice and boxed up */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --button-size: calc(var(--nav-size) * 0.5);
+
+    padding: 0.3rem;
+    margin: 0.2rem;
+
+    background-color: var(--nav-bg-accent);
+
+    border-radius: 50%;
+
+    transition: filter var(--hover-speed);
+
+    height: var(--button-size);
+    width: var(--button-size);
+  }
+
+  .icon-button svg {
+    fill: var(--text-color);
+
+    height: calc(var(--button-size) * 0.8);
+    width: calc(var(--button-size) * 0.8);
+  }
+
+  .dropdown {
+    position: absolute;
+
+    padding: 1rem;
+
+    background-color: var(--nav-bg);
+
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    /* This will hide any elements that exceed the container's bounds, which is great */
+    overflow: hidden;
+
+    /* Move it to the left */
+    transform: translateX(-85%);
+
+    /* Navbar height is 60px. 55px makes it just jut out from the navbar */
+    top: 58px;
+    width: 300px;
+  }
+
+  .dropdown-menu-item {
+    display: flex;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    background-color: var(--nav-bg);
+
+    border-radius: var(--border-radius);
+
+    transition: var(--speed);
+  }
+
+  .icon-right {
+    margin-left: auto;
+  }
+}

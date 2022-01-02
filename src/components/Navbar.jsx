@@ -3,19 +3,27 @@ import { ReactComponent as CartIcon } from "../assets/cart.svg";
 import { ReactComponent as DownArrow } from "../assets/chevron-down.svg";
 import { ReactComponent as InfoIcon } from "../assets/info.svg";
 import { ReactComponent as UserIcon } from "../assets/user.svg";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <NavItem link='#' icon={<UserIcon />} />
-      <NavItem link='#' icon={<InfoIcon />} />
-      <NavItem link='#' icon={<CartIcon />} />
+      <Left>
+        <Language lang='EN' />
+        <Title title='Dum-E' />
+      </Left>
 
-      <NavItem icon={<DownArrow />}>
-        <DropDownMenu>
-          <DropDownItem></DropDownItem>
-        </DropDownMenu>
-      </NavItem>
+      <Right>
+        <NavItem link='#' icon={<UserIcon />} />
+        <NavItem link='#' icon={<InfoIcon />} />
+        <NavItem link='#' icon={<CartIcon />} />
+        {/*DropDown menu here* */}
+        <NavItem icon={<DownArrow />}>
+          <DropDownMenu>
+            <DropDownItem></DropDownItem>
+          </DropDownMenu>
+        </NavItem>
+      </Right>
     </NavbarContainer>
   );
 };
@@ -25,12 +33,31 @@ const Navbar = () => {
 function NavbarContainer(props) {
   return (
     // For JSX, it's classname, and not just class
-    <nav className='navbar-container'>
-      <h1 className='title'>
-        <a href='#'>Dum-E</a>
-      </h1>
-      <ul className='navbar-nav'> {props.children} </ul>
-    </nav>
+    <nav className='navbar-container'>{props.children}</nav>
+  );
+}
+
+function Right(props) {
+  return <div className='right'>{props.children}</div>;
+}
+
+function Left(props) {
+  return <div className='left'>{props.children}</div>;
+}
+
+function Language(props) {
+  return (
+    <a href='#' className='language'>
+      {props.lang}
+    </a>
+  );
+}
+
+function Title(props) {
+  return (
+    <a href='#' className='title'>
+      {props.title}
+    </a>
   );
 }
 

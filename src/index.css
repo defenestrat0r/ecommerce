@@ -3,39 +3,14 @@ html {
   scroll-behavior: smooth;
 }
 
-:root {
-  /*-----Colors */
-  --nav-bg: #dadce1;
-  --nav-bg-accent: #927681;
-  --text-color: #242526;
-  --my-black: #1e1110;
-  --less-black: #495052;
-  --primary: #e7a2a3;
-  --primaryDark: #380d0e;
-  /*-----Speeds */
-  --speed: 500ms;
-  --hover-speed: 350ms;
-  /*-----Other stuff */
-  --nav-size: 60px;
-  --border: 1px solid var(--nav-bg-accent);
-  --border-radius: 8px;
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Urbanist", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: 0.2s ease-in;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -46,113 +21,4 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-/*-----Classes */
-.title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  padding: 0.5rem;
-
-  background-color: var(--nav-bg);
-  color: var(--less-black);
-
-  transition: all var(--hover-speed);
-}
-
-/* Hover only triggers for devices whose primary input is a pointer device 
-** Aka not a touch device
-*/
-@media (hover: hover) and (pointer: fine) {
-  .title > a:hover {
-    color: var(--primary);
-  }
-
-  .icon-button:hover {
-    filter: brightness(1.5);
-  }
-
-  .dropdown-menu-item:hover {
-    filter: brightness(1.5);
-  }
-}
-
-/*-----Big Screens */
-@media only screen and (min-width: 1140px) {
-  /*-----Classes */
-  .navbar-container {
-    height: var(--nav-size);
-    background-color: var(--nav-bg);
-    padding: 0 1rem;
-    border-bottom: var(--primaryDark);
-    display: flex;
-  }
-
-  .navbar-nav {
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  .nav-item {
-    color: var(--text-color);
-    --nav-item-size: calc(var(--nav-size) * 0.8);
-    width: var(--nav-item-size);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon-button {
-    --button-size: calc(var(--nav-size) * 0.5);
-    width: var(--button-size);
-    height: var(--button-size);
-    background-color: var(--nav-bg-accent);
-    padding: 0.3rem;
-    margin: 0.2rem;
-    border-radius: 50%;
-    transition: filter var(--hover-speed);
-    /* Flexbox to keep everything nice and boxed up */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon-button svg {
-    fill: var(--text-color);
-    height: calc(var(--button-size) * 0.8);
-    width: calc(var(--button-size) * 0.8);
-  }
-
-  .dropdown {
-    position: absolute;
-    /* Navbar height is 60px. 55px makes it just jut out from the navbar */
-    top: 58px;
-    width: 300px;
-    /* Move it to the left */
-    transform: translateX(-85%);
-    border: var(--border);
-    border-radius: var(--border-radius);
-    padding: 1rem;
-    background-color: var(--nav-bg);
-    /* This will hide any elements that exceed the container's bounds, which is great */
-    overflow: hidden;
-  }
-
-  .dropdown-menu-item {
-    display: flex;
-    align-items: center;
-    border-radius: var(--border-radius);
-    transition: var(--speed);
-    padding: 0.5rem;
-    background-color: var(--nav-bg);
-  }
-
-  .icon-right {
-    margin-left: auto;
-  }
 }
