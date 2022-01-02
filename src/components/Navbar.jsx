@@ -17,39 +17,44 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
 const Navbar = () => {
   return (
-    <NavbarContainer>
-      <Left>
-        <Language lang='EN' />
-        <Title title='Dum-E.' />
-      </Left>
+    <ThemeProvider theme={theme}>
+      <NavbarContainer>
+        <Left>
+          <Language lang='EN' />
+          <Title title='Dum-E.' />
+        </Left>
 
-      <Center>
-        <Box
-          component='form'
-          sx={{
-            "& > :not(style)": { m: 1, width: "40ch" },
-          }}
-          noValidate
-          autoComplete='off'
-        >
-          <FormControl sx={{ m: 1, width: "25ch" }}>
-            <InputLabel>Search</InputLabel>
-            <Input
-              id='outlined-search-with-icon'
-              type='search'
-              endAdornment={
-                <InputAdornment position='end'>
-                  <SearchIcon aria-label='search icon' edge='end' />
-                </InputAdornment>
-              }
-              label='search'
-            />
-          </FormControl>
-        </Box>
-      </Center>
+        <Center>
+          <Box
+            component='form'
+            sx={{
+              "& > :not(style)": { m: 1, width: "40ch" },
+            }}
+            noValidate
+            autoComplete='off'
+          >
+            <FormControl sx={{ m: 1, width: "25ch" }}>
+              <InputLabel color='secondary'>Search</InputLabel>
+              <Input
+                id='outlined-search-with-icon'
+                type='search'
+                label='search'
+                color='secondary'
+                endAdornment={
+                  <InputAdornment position='end'>
+                    <SearchIcon
+                      aria-label='search icon'
+                      edge='end'
+                      color='secondary'
+                    />
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </Box>
+        </Center>
 
-      <Right>
-        <ThemeProvider theme={theme}>
+        <Right>
           <CustomButton variant='text' size='large' color='textBlack'>
             Register
           </CustomButton>
@@ -60,12 +65,12 @@ const Navbar = () => {
 
           <IconButton aria-label='cart'>
             <Badge badgeContent={4} color='primary'>
-              <ShoppingCartOutlinedIcon color='action' />
+              <ShoppingCartOutlinedIcon color='secxon' />
             </Badge>
           </IconButton>
-        </ThemeProvider>
-      </Right>
-    </NavbarContainer>
+        </Right>
+      </NavbarContainer>
+    </ThemeProvider>
   );
 };
 
