@@ -22,13 +22,11 @@
 .navbar-container {
   display: flex;
 
-  padding: 0 1rem;
+  padding: 0.5rem;
 
   background-color: var(--nav-bg);
-  border-bottom: var(--primaryDark);
 
   height: var(--nav-size);
-  top: 0;
   margin-bottom: auto;
 }
 
@@ -66,7 +64,7 @@
     /* Margin-rigth:auto pushes it to left of the container by filling up the space on right of this flexbox */
     margin-right: auto;
 
-    padding: 0.5rem;
+    padding: 0.2rem;
 
     background-color: var(--nav-bg);
     color: var(--less-black);
