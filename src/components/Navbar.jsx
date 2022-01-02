@@ -63,7 +63,7 @@ const Navbar = () => {
 
           <IconButton aria-label='cart'>
             <Badge badgeContent={4} color='primary'>
-              <ShoppingCartOutlinedIcon color='secxon' />
+              <ShoppingCartOutlinedIcon color='textBlack' />
             </Badge>
           </IconButton>
         </Right>
