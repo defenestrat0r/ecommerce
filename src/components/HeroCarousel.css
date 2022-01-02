@@ -1,0 +1,51 @@
+:root {
+  --primaryLight: #dadce1;
+  --primary: #b76e79;
+  --primaryDark: #86434d;
+  --secondary: #6d82b7;
+
+  box-sizing: border-box;
+}
+
+/*-----Big Screens */
+@media only screen and (min-width: 1140px) {
+  /*-----Classes */
+  .hero-container {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--primary);
+
+    overflow: hidden;
+
+    height: 100vh;
+    width: 100%;
+  }
+
+  .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primaryLight);
+
+    opacity: 0.4;
+    transition: all 1s;
+
+    width: 3rem;
+  }
+
+  .left-arrow {
+    margin-right: auto;
+  }
+
+  .right-arrow {
+    margin-left: auto;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrow:hover {
+    opacity: 0.9;
+  }
+}
