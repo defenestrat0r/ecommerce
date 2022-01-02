@@ -4,14 +4,42 @@ import { ReactComponent as DownArrow } from "../assets/chevron-down.svg";
 import { ReactComponent as InfoIcon } from "../assets/info.svg";
 import { ReactComponent as UserIcon } from "../assets/user.svg";
 import "./Navbar.css";
+import Box from "@mui/material/Box";
+import SearchIcon from "@mui/icons-material/Search";
+import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
 
 const Navbar = () => {
   return (
     <NavbarContainer>
       <Left>
         <Language lang='EN' />
-        <Title title='Dum-E' />
+        <Title title='Dum-E.' />
       </Left>
+
+      <Center>
+        <Box
+          component='form'
+          sx={{
+            "& > :not(style)": { m: 1, width: "40ch" },
+          }}
+          noValidate
+          autoComplete='off'
+        >
+          <FormControl sx={{ m: 1, width: "25ch" }}>
+            <InputLabel>Search</InputLabel>
+            <Input
+              id='outlined-search-with-icon'
+              type='search'
+              endAdornment={
+                <InputAdornment position='end'>
+                  <SearchIcon aria-label='search icon' edge='end' />
+                </InputAdornment>
+              }
+              label='search'
+            />
+          </FormControl>
+        </Box>
+      </Center>
 
       <Right>
         <NavItem link='#' icon={<UserIcon />} />
@@ -39,6 +67,10 @@ function NavbarContainer(props) {
 
 function Right(props) {
   return <div className='right'>{props.children}</div>;
+}
+
+function Center(props) {
+  return <div className='center'>{props.children}</div>;
 }
 
 function Left(props) {

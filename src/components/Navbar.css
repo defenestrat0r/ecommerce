@@ -31,8 +31,7 @@
 
 .title {
   font-size: 2rem;
-  line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2rem;
 }
 
@@ -75,6 +74,14 @@
   /* Space between items in the left flexbox */
   .left > a {
     margin: 1rem;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
   }
 
   .right {
