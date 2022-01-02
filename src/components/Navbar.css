@@ -28,6 +28,8 @@
   border-bottom: var(--primaryDark);
 
   height: var(--nav-size);
+  top: 0;
+  margin-bottom: auto;
 }
 
 .title {
