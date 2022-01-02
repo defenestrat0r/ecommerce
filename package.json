@@ -38,5 +38,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "Fake e-commerce application built with ReactJs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defenestrat0r/ecommerce.git"
+  },
+  "author": "Junaid Nooh",
+  "bugs": {
+    "url": "https://github.com/defenestrat0r/ecommerce/issues"
   }
 }
