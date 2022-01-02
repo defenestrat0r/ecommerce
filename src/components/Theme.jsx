@@ -9,10 +9,16 @@ const theme = createTheme({
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      light: "#0066ff",
-      main: "#0044ff",
+      //light: "#0066ff",
+      main: "#6D82B7",
       // dark: will be calculated from palette.secondary.main,
-      contrastText: "#ffcc00",
+      //contrastText: "#ffcc00",
+    },
+    textBlack: {
+      main: "#242526",
+    },
+    textWhite: {
+      main: "ebe6e3",
     },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
