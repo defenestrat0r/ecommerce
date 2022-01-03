@@ -1,12 +1,3 @@
-:root {
-  --primaryLight: #dadce1;
-  --primary: #b76e79;
-  --primaryDark: #86434d;
-  --secondary: #6d82b7;
-
-  box-sizing: border-box;
-}
-
 /*-----Big Screens */
 @media only screen and (min-width: 1140px) {
   /*-----Classes */

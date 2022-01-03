@@ -3,6 +3,25 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  /*-----Speeds */
+  --speed: 500ms;
+  --hover-speed: 350ms;
+  /*-----Colors */
+  --primaryLight: #dadce1;
+  --primary: #b76e79;
+  --primaryDark: #86434d;
+  --secondary: #6d82b7;
+  --nav-bg: #dadce1;
+  --nav-bg-accent: #b899a5;
+  --text-color: #242526;
+  /*-----Other stuff */
+  --nav-size: 60px;
+  --border: 1px solid var(--nav-bg-accent);
+  --border-radius: 8px;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Urbanist", "Segoe UI",
