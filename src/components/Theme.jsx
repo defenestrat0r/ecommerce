@@ -10,7 +10,7 @@ const theme = createTheme({
     },
     secondary: {
       //light: "#0066ff",
-      main: "#6D82B7",
+      main: "#8A854E",
       // dark: will be calculated from palette.secondary.main,
       //contrastText: "#ffcc00",
     },
