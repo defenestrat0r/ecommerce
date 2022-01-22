@@ -9,7 +9,7 @@ Fake e-commerce application built with ReactJs
 - Navbar is done, and it looks good so far
 - Started on Hero Carousel for new arrivals / hot deals etc.
 
-![How it looks rn](src/assets/v0.2.2.png)
+![How it looks rn](src/assets/versions/v0.2.2.png)
 
 ## What's inside?
 
