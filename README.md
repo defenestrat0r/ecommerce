@@ -7,9 +7,10 @@ Fake e-commerce application built with ReactJs
 - React is entirely new to me, and this might take a while, but seems like a fun old time
 - I'm also now settling into a format for my ReadMe's: Title, abstract, current state, technologies used, what's next
 - Navbar is done, and it looks good so far
-- Started on Hero Carousel for new arrivals / hot deals etc.
+- Carousel for new arrivals / hot deals etc. works and it's cute!
+  - It doesn't seem to make the whole div clickable and only the smol arrow icon triggers the slider
 
-![How it looks rn](src/assets/versions/v0.2.2.png)
+![How it looks rn](src/assets/versions/v0.2.3.png)
 
 ## What's inside?
 
