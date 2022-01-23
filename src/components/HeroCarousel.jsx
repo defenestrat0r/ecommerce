@@ -1,44 +1,71 @@
+import { useState } from "react";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import "./HeroCarousel.css";
 
 const HeroCarousel = () => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      console.log("right clicc");
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
+
   return (
     <HeroContainer>
-      <ArrowContainer>
-        <Arrow direction='left'>
-          <ArrowBackIosNew />
-        </Arrow>
-      </ArrowContainer>
+      <Arrow direction='left' onClick={() => handleClick("left")}>
+        <ArrowBackIosNew />
+      </Arrow>
 
-      <SlideWrapper>
-        <ImgContainer>
-          <Img src='https://raw.githubusercontent.com/defenestrat0r/ecommerce/master/src/assets/grey_landscape_casuals.jpg' />
-        </ImgContainer>
+      <Carousel slideIndex={slideIndex}>
+        <SlideWrapper id='1'>
+          <ImgContainer>
+            <Img src='https://raw.githubusercontent.com/defenestrat0r/ecommerce/master/src/assets/grey_landscape_casuals.jpg' />
+          </ImgContainer>
 
-        <InfoWrapper>
           <InfoContainer>
             <Title>Classy Casuals Sale</Title>
             <Desc>UPGRADE YOUR WARDROBE WITH A FLAT 40% OFF ON CASUALS!</Desc>
             <Button>Go now!</Button>
           </InfoContainer>
-        </InfoWrapper>
-      </SlideWrapper>
+        </SlideWrapper>
 
-      <ArrowContainer>
-        <Arrow direction='right'>
-          <ArrowForwardIos />
-        </Arrow>
-      </ArrowContainer>
+        <SlideWrapper id='2'>
+          <ImgContainer>
+            <Img src='https://raw.githubusercontent.com/defenestrat0r/ecommerce/master/src/assets/grey_landscape_casuals.jpg' />
+          </ImgContainer>
+
+          <InfoContainer>
+            <Title>New Arrivals</Title>
+            <Desc>UP TO 50% OFF ON NEW ARRIVALS!</Desc>
+            <Button>Go now!</Button>
+          </InfoContainer>
+        </SlideWrapper>
+
+        <SlideWrapper id='3'>
+          <ImgContainer>
+            <Img src='https://raw.githubusercontent.com/defenestrat0r/ecommerce/master/src/assets/grey_landscape_casuals.jpg' />
+          </ImgContainer>
+
+          <InfoContainer>
+            <Title>Shoe them up</Title>
+            <Desc>UP YOUR FOOT GAME WITH A 20% FLAT DISCOUNT ON FOOTWEAR!</Desc>
+            <Button>Go now!</Button>
+          </InfoContainer>
+        </SlideWrapper>
+      </Carousel>
+
+      <Arrow direction='right' onClick={() => handleClick("right")}>
+        <ArrowForwardIos />
+      </Arrow>
     </HeroContainer>
   );
 };
 
 function HeroContainer(props) {
   return <div className='hero-container'>{props.children}</div>;
-}
-
-function ArrowContainer(props) {
-  return <div className='arrow-container'>{props.children}</div>;
 }
 
 /** Conditional Classes!
@@ -58,24 +85,26 @@ function Arrow(props) {
   );
 }
 
+function Carousel(props) {
+  return (
+    <div className={`carousel no${props.slideIndex}`}>{props.children}</div>
+  );
+}
+
 function SlideWrapper(props) {
-  return <div className='carousel-wrapper'>{props.children}</div>;
+  return <div className='slide-wrapper'>{props.children}</div>;
 }
 
 function ImgContainer(props) {
-  return <div className='carousel-img-container'>{props.children}</div>;
+  return <div className='slide-img-container'>{props.children}</div>;
 }
 
 function Img(props) {
   return <img src={props.src} alt='hot deals' />;
 }
 
-function InfoWrapper(props) {
-  return <div className='info-wrapper'>{props.children}</div>;
-}
-
 function InfoContainer(props) {
-  return <div className='info-container'>{props.children}</div>;
+  return <div className='slide-info-container'>{props.children}</div>;
 }
 
 function Title(props) {

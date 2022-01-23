@@ -4,23 +4,47 @@
   .hero-container {
     display: flex;
     justify-content: center;
+    position: relative;
+
+    overflow: hidden;
 
     height: 80vh;
+    width: 100vw;
+  }
+
+  .carousel {
+    display: flex;
+
+    transition: all 1s;
+
+    height: 100%;
     width: 100%;
   }
 
-  .arrow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .no0 {
+    transform: translateX(0 * -100vw);
+  }
+
+  .no1 {
+    transform: translateX(1 * -100vw);
+  }
+
+  .no2 {
+    transform: translateX(2 * -100vw);
   }
 
   .arrow {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    /* z-index specifies what order the element is stacked 
+    ** An element with a higher z-index will be on top of an element with lower z-index
+    ** We're setting this high so the arrows will display above everything */
+    z-index: 2;
 
     background-color: var(--primary);
+    opacity: 0.6;
 
     border-radius: 50%;
 
@@ -28,63 +52,65 @@
 
     transition: all var(--hover-speed);
 
+    padding: 00.2rem;
+
+    /* top + bottom as zero and then margin: auto centers the element*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
     height: 4rem;
     width: 4rem;
   }
 
   .left-arrow {
-    margin-right: auto;
+    left: 0.2rem;
   }
 
   .right-arrow {
-    margin-left: auto;
+    right: 0.2rem;
   }
 
-  .carousel-wrapper {
+  .slide-wrapper {
     display: flex;
-    align-items: center;
+    /* The flex shorthand property has
+    ** 1: flex-grow
+    ** 2: flex-shrink
+    ** 3: flex-basis, which is used to set the initial length (width) of the element
+    ** We pump it to 100% to take up the whole space of the slide */
+    flex: 0 0 100%;
 
     height: 100%;
-    width: 100%;
   }
 
-  .carousel-img-container {
+  .slide-img-container {
     flex: 1;
 
-    padding: 0.5rem;
+    padding: 0 0.5rem;
 
     height: 100%;
-    width: 60%;
   }
 
-  .carousel-img-container > img {
+  .slide-img-container > img {
     object-fit: contain;
 
     height: 100%;
     width: 100%;
   }
 
-  .info-wrapper {
+  .slide-info-container {
     flex: 1;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     padding: 0.5rem;
 
     height: 100%;
-    width: 40%;
   }
 
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    gap: 0.5rem;
-  }
-
-  .info-container > h1 {
+  .slide-info-container > h1 {
     font-size: 4rem;
     text-align: left;
     letter-spacing: 1px;
@@ -93,7 +119,7 @@
     padding: 0.5rem;
   }
 
-  .info-container > p {
+  .slide-info-container > p {
     font-size: 1.5rem;
     text-align: left;
     letter-spacing: 3px;
@@ -103,7 +129,7 @@
     padding: 00.5rem;
   }
 
-  .info-container > button {
+  .slide-info-container > button {
     font-family: -apple-system, BlinkMacSystemFont, "Urbanist", "Segoe UI",
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
@@ -120,5 +146,6 @@
 @media (hover: hover) and (pointer: fine) {
   .arrow:hover {
     filter: brightness(1.2);
+    opacity: 1;
   }
 }
