@@ -21,16 +21,16 @@
     width: 100%;
   }
 
-  .no0 {
-    transform: translateX(0 * -100vw);
+  .no1 {
+    transform: translateX(0vw);
   }
 
   .no1 {
-    transform: translateX(1 * -100vw);
+    transform: translateX(-100vw);
   }
 
   .no2 {
-    transform: translateX(2 * -100vw);
+    transform: translateX(-200vw);
   }
 
   .arrow {
@@ -45,8 +45,6 @@
 
     background-color: var(--primary);
     opacity: 0.6;
-
-    border-radius: 50%;
 
     cursor: pointer;
 
