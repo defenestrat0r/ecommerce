@@ -6,6 +6,7 @@ const HeroCarousel = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
+      console.log("left clicc");
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
     } else {
       console.log("right clicc");
