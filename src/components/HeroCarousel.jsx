@@ -16,8 +16,8 @@ const HeroCarousel = () => {
 
   return (
     <HeroContainer>
-      <Arrow direction='left' onClick={() => handleClick("left")}>
-        <ArrowBackIosNew />
+      <Arrow direction='left'>
+        <ArrowBackIosNew onClick={() => handleClick("left")} />
       </Arrow>
 
       <Carousel slideIndex={slideIndex}>
@@ -58,8 +58,8 @@ const HeroCarousel = () => {
         </SlideWrapper>
       </Carousel>
 
-      <Arrow direction='right' onClick={() => handleClick("right")}>
-        <ArrowForwardIos />
+      <Arrow direction='right'>
+        <ArrowForwardIos onClick={() => handleClick("right")} />
       </Arrow>
     </HeroContainer>
   );
